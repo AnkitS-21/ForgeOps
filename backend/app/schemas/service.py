@@ -16,6 +16,8 @@ class ServiceCreate(BaseModel):
 
     environment: ServiceEnvironment
 
+    endpoint_url: str | None = None
+
 
 class ServiceUpdate(BaseModel):
 
@@ -28,6 +30,8 @@ class ServiceUpdate(BaseModel):
     environment: ServiceEnvironment | None = None
 
     status: ServiceStatus | None = None
+
+    endpoint_url: str | None = None
 
 
 class ServiceResponse(BaseModel):
@@ -49,3 +53,5 @@ class ServiceResponse(BaseModel):
     updated_at: datetime
 
     model_config = ConfigDict(from_attributes=True)
+
+    endpoint_url: str | None

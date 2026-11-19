@@ -81,3 +81,8 @@ class Service(Base):
         onupdate=func.now(),
         nullable=False
     )
+
+    endpoint_url: Mapped[str | None] = mapped_column(
+        String(500),
+        nullable=True
+    )
